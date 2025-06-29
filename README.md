@@ -1,6 +1,6 @@
 # Aspect-Based Sentiment Analysis with Llama 3
 
-This repository contains experiments on aspect-based sentiment analysis (ABSA) using Meta's Llama 3 series language models.  The project covers data preparation, fine-tuning with LoRA adapters, zero‑shot/few‑shot evaluation and model testing.  All training and inference jobs are configured to run on [Modal](https://modal.com/) GPU containers.
+This repository contains experiments on aspect-based sentiment analysis (ABSA) using Meta's Llama 3 (3-8B, 3-70B, 3.1-70B, 3.3-8B) series language models.  The project covers data preparation, fine-tuning with LoRA adapters, zero‑shot/few‑shot evaluation and model testing.  All training and inference jobs are configured to run on [Modal](https://modal.com/) GPU containers.
 
 ## Repository Structure
 
