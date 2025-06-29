@@ -27,10 +27,40 @@ zeroshot:fewshot(temperature)/
 
 ## Setup
 
-1. **Clone the repository** and install the required Python packages.  The Modal functions specify Python 3.10.
-2. **Configure Hugging Face and Modal credentials**:
-   - Create a secret named `my-huggingface-secret` in your Modal account containing your Hugging Face token (`HF_TOKEN`).
+### Prerequisites
+
+- Python 3.10
+- A Modal account with GPU access
+- A Hugging Face account with permission to download the Llama models
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url>
+   cd Nastya
+   ```
+2. **Install the dependencies**
+   ```bash
+   pip install modal transformers torch datasets peft trl bitsandbytes accelerate scikit-learn tensorboard
+   ```
+3. **Configure Hugging Face and Modal credentials**
+   - Create a secret named `my-huggingface-secret` in your Modal account containing your Hugging Face token (`HF_TOKEN`).  One way is:
+     ```bash
+     modal secret put my-huggingface-secret HF_TOKEN=your-hf-token
+     ```
    - Ensure you have access to the Llama models you plan to use.
+
+### First-Time Modal Setup
+
+If you have never used Modal before, authenticate and create the storage volume that all scripts rely on:
+
+```bash
+modal token new                     # open a browser to log in
+modal volume create llama-models    # persistent storage for model weights
+```
+
+Once authenticated, you can run `modal run` commands from this repository.
 
 ## How to Run the Scripts
 
